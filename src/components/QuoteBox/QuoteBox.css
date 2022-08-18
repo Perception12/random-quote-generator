@@ -1,0 +1,59 @@
+#quote-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background-color: #fff;
+    width: 35rem;
+    border-radius: 0.5rem;
+    padding: 2rem;
+}
+
+.quotes-enter {
+    opacity: 0.01;
+}
+.quotes-enter.quotes-enter-leave {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+}
+
+.quotes-leave {
+    opacity: 1;
+}
+
+.quotes-leave.quotes-leave-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+}
+
+#text {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 2rem;
+}
+
+#author {
+    text-align: right;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.links {
+    display: flex;
+    gap: 0.2rem;
+}
+
+.button {
+    background-color: #333;
+    color: white;
+    padding: 0.5rem;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#new-quote {
+    font-size: 12px;
+}
