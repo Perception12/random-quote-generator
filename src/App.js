@@ -63,6 +63,7 @@ function App() {
             author={quoteData.author}
             color={color}
             click={quoteHandler}
+            id={index}
           />
         </div>
       </div>

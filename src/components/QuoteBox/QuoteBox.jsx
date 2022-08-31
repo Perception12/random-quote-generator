@@ -6,7 +6,7 @@ import { solid, brands } from "@fortawesome/fontawesome-svg-core/import.macro";
 import { motion } from "framer-motion";
 
 const QuoteBox = (props) => {
-  const transition = { type: "spring", duration: 2 };
+  const transition = { type: "free", duration: 1.5 };
   const fontstyle = {
     color: props.color,
   };
@@ -16,22 +16,20 @@ const QuoteBox = (props) => {
   };
 
   return (
-    <div style={fontstyle} id="quote-box">
-      <motion.span
-        initial={{opacity:0}}
-        animate={{opacity:1}}
-        exit={{opacity:0}}
-        transition={transition}
-        id="text"
-      >
+    <motion.div
+      key={props.id}
+      initial={{ opacity: 0.1, x:-100 }}
+      animate={{ opacity: 1, x:0 }}
+      exit={{ opacity: 0, x:-100 }}
+      transition={transition}
+      style={fontstyle}
+      id="quote-box"
+    >
+      <span id="text">
         {" "}
         <FontAwesomeIcon icon={solid("quote-left")} /> {props.quote}
-      </motion.span>
-      <span
-        id="author"
-      >
-        -{props.author}
       </span>
+      <span id="author">-{props.author}</span>
 
       <div className="buttons">
         <div className="links">
@@ -57,7 +55,7 @@ const QuoteBox = (props) => {
           New quote
         </span>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
