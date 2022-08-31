@@ -18,7 +18,7 @@ const QuoteBox = (props) => {
   return (
     <div style={fontstyle} id="quote-box">
       <motion.span
-        key={props.quote[0]}
+        key={props.quote[3]}
         initial={{opacity:0}}
         animate={{opacity:1}}
         exit={{opacity:0}}
