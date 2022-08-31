@@ -20,7 +20,7 @@ const QuoteBox = (props) => {
       key={props.id}
       initial={{ opacity: 0.1, x:-100 }}
       animate={{ opacity: 1, x:0 }}
-      exit={{ opacity: 0, x:-100 }}
+      exit={{ opacity: 0, x: -100 }}
       transition={transition}
       style={fontstyle}
       id="quote-box"
