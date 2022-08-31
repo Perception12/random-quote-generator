@@ -18,24 +18,21 @@ const QuoteBox = (props) => {
   return (
     <div style={fontstyle} id="quote-box">
       <motion.span
-        key={props.id}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        key={props.quote[0]}
+        initial={{opacity:0}}
+        animate={{opacity:1}}
+        exit={{opacity:0}}
         transition={transition}
         id="text"
       >
         {" "}
         <FontAwesomeIcon icon={solid("quote-left")} /> {props.quote}
       </motion.span>
-      <motion.span
-        key={props.id}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={transition}
+      <span
         id="author"
       >
         -{props.author}
-      </motion.span>
+      </span>
 
       <div className="buttons">
         <div className="links">

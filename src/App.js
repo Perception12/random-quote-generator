@@ -18,19 +18,15 @@ function App() {
     "#FB6964",
     "#342224",
     "#472E32",
-    "#BDBB99",
+    "#d6b65a",
     "#77B1A9",
     "#73A857",
   ];
-  var colorIdx = Math.floor(Math.random() * colors.length)
-
+  var colorIdx = Math.floor(Math.random() * colors.length);
 
   const [quoteData, setQuoteData] = useState([initData[0]]);
   const [data, setData] = useState(null);
   const [color, setColor] = useState(colors[colorIdx]);
-
-  
-  
 
   var getData = async () => {
     var result;
@@ -52,22 +48,23 @@ function App() {
   }, []);
 
   var quoteHandler = () => {
-    index = Math.floor(Math.random() * data.length)
-    colorIdx = Math.floor(Math.random() * colors.length)
+    index = Math.floor(Math.random() * data.length);
+    colorIdx = Math.floor(Math.random() * colors.length);
     setQuoteData(data[index]);
-    setColor(colors[colorIdx])
+    setColor(colors[colorIdx]);
   };
 
   return (
     <div className="App">
-      <div style={{backgroundColor: color}} className="app-container">
-      <QuoteBox
-        quote={quoteData.quote}
-        author={quoteData.author}
-        color={color}
-        click={quoteHandler}
-        id={index}
-      />
+      <div style={{ backgroundColor: color }} className="app-container">
+        <div>
+          <QuoteBox
+            quote={quoteData.quote}
+            author={quoteData.author}
+            color={color}
+            click={quoteHandler}
+          />
+        </div>
       </div>
     </div>
   );
