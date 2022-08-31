@@ -43,6 +43,7 @@ const QuoteBox = (props) => {
             <FontAwesomeIcon icon={brands("twitter")} width="20px" />
           </a>
         </div>
+        
         <span
           onClick={props.click}
           className="button"
