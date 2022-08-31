@@ -3,9 +3,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { solid, brands } from "@fortawesome/fontawesome-svg-core/import.macro";
-
+import { motion } from "framer-motion";
 
 const QuoteBox = (props) => {
+  const transition = { type: "spring", duration: 2 };
   const fontstyle = {
     color: props.color,
   };
@@ -16,11 +17,25 @@ const QuoteBox = (props) => {
 
   return (
     <div style={fontstyle} id="quote-box">
-      <span id="text">
+      <motion.span
+        key={props.id}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={transition}
+        id="text"
+      >
         {" "}
         <FontAwesomeIcon icon={solid("quote-left")} /> {props.quote}
-      </span>
-      <span id="author">-{props.author}</span>
+      </motion.span>
+      <motion.span
+        key={props.id}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={transition}
+        id="author"
+      >
+        -{props.author}
+      </motion.span>
 
       <div className="buttons">
         <div className="links">
@@ -37,7 +52,12 @@ const QuoteBox = (props) => {
             <FontAwesomeIcon icon={brands("tumblr")} width="20px" />
           </a>
         </div>
-        <span onClick={props.click} className="button" id="new-quote" style={buttonStyle}>
+        <span
+          onClick={props.click}
+          className="button"
+          id="new-quote"
+          style={buttonStyle}
+        >
           New quote
         </span>
       </div>
