@@ -42,3 +42,21 @@
     align-items: center;
     font-size: 12px;
 }
+
+@media only screen and (max-width: 686px){
+  #quote-box {
+    width: 15em;
+  }
+
+  #text {
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+  #text>:nth-child(1){
+    font-size: 2.5rem;
+  }
+}
